@@ -4,6 +4,9 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+// Add this in node_modules/react-dom/index.js
+window.React1 = require('react');
+
 ReactDOM.render(
   <React.StrictMode>
     <App />
