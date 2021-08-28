@@ -1,29 +1,28 @@
 import { useState } from "react";
 
-// Add this in your component file
-require('react-dom');
-window.React2 = require('react');
+require("react-dom");
+window.React2 = require("react");
 console.log(window.React1 === window.React2);
 
 const AddTask = ({ addTask }) => {
-  const [text, setText] = useState("")
-  const [day, setDay] = useState("")
-  const [reminder, setReminder] = useState(false)
+  const [text, setText] = useState("");
+  const [day, setDay] = useState("");
+  const [reminder, setReminder] = useState(false);
 
   const onSubmit = (e) => {
-    e.preventDefault()
+    e.preventDefault();
 
     if (!text) {
-      alert("Please add a task")
-      return
+      alert("Please add a task");
+      return;
     }
 
-    AddTask({ text, day, reminder })
+    setText("");
+    setDay("");
+    setReminder(false);
 
-    setText("")
-    setDay("")
-    setReminder(false)
-  }
+    addTask({ text, day, reminder });
+  };
 
   return (
     <form className="add-form" onSubmit={onSubmit}>
@@ -57,7 +56,7 @@ const AddTask = ({ addTask }) => {
 
       <input type="submit" value="Save Task" className="btn btn-block" />
     </form>
-  )
-}
+  );
+};
 
 export default AddTask;

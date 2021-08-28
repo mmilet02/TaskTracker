@@ -3,9 +3,9 @@ import Task from "./Task";
 function Tasks({ tasks, deleteTask, toggleReminder }) {
   return (
     <>
-      {tasks.map((task) => (
+      {tasks.map((task, index) => (
         <Task
-          key={task.id}
+          key={index}
           task={task}
           deleteTask={deleteTask}
           toggleReminder={toggleReminder}
